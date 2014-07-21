@@ -6,7 +6,7 @@ LISBON · MAY 2014
 --- 
   
 
-Experiment in [openFrameworks](http://openframeworks.cc) with [ofxPostProcessing](https://github.com/neilmendoza/ofxPostProcessing), ofxKinect and ofxOsc (both included on the openFrameworks release) connected to [IanniX](http://www.iannix.org), for live performance.   The Kinect controls the *satellites* position, the sound the brightness and IanniX controls the camera position. (With no video capture, the frame rate is around 30.)  
+Experiment in [openFrameworks](http://openframeworks.cc) with [ofxPostProcessing](https://github.com/neilmendoza/ofxPostProcessing), ofxKinect and ofxOsc (both included on the openFrameworks release) connected to [IanniX](http://www.iannix.org), for live performance.   The Kinect controls the *satellites* position, the sound controls the brightness and IanniX controls the camera position. (With no video capture, the frame rate is around 30.)  
 
 Dark dark space. Play it, as loud as you can.  
 
