@@ -1,20 +1,17 @@
-#ifndef _OF_PLANET     // if this class hasn't been defined, the program can define it
-#define _OF_PLANET    // by using this if statement you prevent the class to be called more
-                    // than once which would confuse the compiler
+#ifndef _OF_PLANET
+#define _OF_PLANET
 
 #include "ofMain.h"
 
 class ofPlanet {
     
-public: // place public functions or variables declarations here
+public:
     
-    // methods, equivalent to specific functions of your class objects
-    //void update(int i, float spectrum);  // update method, used to refresh your objects properties
     void update(int planetCounter, int kinectPosition, float spectrum);
-    void draw();    // draw method, this where you'll do the object's drawing
+    void draw();
     
     // variables
-    float x;      // position
+    float x;
     float y;
     int nSatellites;
     int i;
@@ -29,11 +26,10 @@ public: // place public functions or variables declarations here
     ofMesh satelliteSphere;
     vector<ofVec3f> satellitePosition;
     
-    ofPlanet(float x, float y, int nSatellites); // constructor - used to initialize an object, if no properties are passed
-    //               the program sets them to the default value
+    ofPlanet(float x, float y, int nSatellites);
     
-private: // place private functions or variables declarations here
+private:
     
-}; // dont't forget the semicolon!!
+};
 
 #endif

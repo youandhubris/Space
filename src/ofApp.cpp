@@ -4,8 +4,6 @@
 void ofApp::setup(){
     
     // OSC
-    // listen on the given port
-	//cout << "listening for osc messages on port " << PORT << "\n";
 	receiver.setup(PORT);
     
 	current_msg_string = 0;
@@ -111,11 +109,6 @@ void ofApp::update(){
     // SOUND
     ofSoundUpdate();   //Get current spectrum with N bands
     float *val = ofSoundGetSpectrum(N);
-    //We should not release memory of val,
-    //because it is managed by sound engine
-    //Update our smoothed spectrum,
-    //by slowly decreasing its values and getting maximum with val
-    //So we will have slowly falling peaks in spectrum
     planetCounter = 0;
     int step = 5;
     for(int y = 157; y < kinect.height - 158; y += step) {
@@ -133,7 +126,7 @@ void ofApp::update(){
     }
     
     for (int i = 0; i < nStars; i++) {
-        spectrum[i] *= 0.99;    //Slow decreasing
+        spectrum[i] *= 0.99;
         spectrum[i] = max(spectrum[i], val[i]);
         myStar[i]->update(i, spectrum[i]);
     }
@@ -143,22 +136,13 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-    glPushAttrib(GL_ENABLE_BIT); // copy enable part of gl state
-    // setup gl state
+    glPushAttrib(GL_ENABLE_BIT);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
     
-    post.begin(cam); // begin scene to post process
+    post.begin(cam);
     ofPushMatrix();
     ofScale(1, -1, 1);
-    //ofRotateY(90);
-    //    rotY += 0.5;
-    //    ofRotateX(rotX);
-    //    rotX += 0.5;
-    //    ofRotateZ(rotZ);
-    //    rotZ += 0.5;
-    //ofEnableLighting();
-    //pointLight.enable();
     
     for (int i = 0; i < nPlanets; i++) {
         myPlanet[i]->draw();
@@ -169,9 +153,8 @@ void ofApp::draw(){
     }
 
     ofPopMatrix();
-    post.end(); // end scene and draw
+    post.end();
     
-    // set gl state back to original
     glPopAttrib();
 }
 

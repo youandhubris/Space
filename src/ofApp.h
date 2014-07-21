@@ -1,3 +1,19 @@
+/*
+ -----------------------------------------------------------------
+ SPACE
+ -----------------------------------------------------------------
+ BY HUBRIS [cargocollective.com/hubris]
+ LISBON á APRIL 2014
+ -----------------------------------------------------------------
+ FINAL VERSION
+ -----------------------------------------------------------------
+ USING THE FOLLOWING ADD-ONS:
+ ofxPostProcessing [http://www.neilmendoza.com/ofxpostprocessing/]
+ ofxOsc
+ ofxKinect
+ -----------------------------------------------------------------
+ */
+
 #pragma once
 
 #include "ofMain.h"
@@ -38,9 +54,9 @@ public:
     ofLight pointLight;
     
     // Sound
-    ofSoundPlayer sound;    //Sound sample
-    const int N = 726;      //Number of bands in spectrum
-    float spectrum[726];      //Smoothed spectrum values
+    ofSoundPlayer sound;
+    const int N = 726;
+    float spectrum[726];
     
     // Kinect
     ofxKinect kinect;

@@ -29,7 +29,6 @@ ofPlanet::ofPlanet(float _x, float _y, int _nSatellites)
 
 }
 
-//void ofPlanet::update(int _i, float _spectrum)
 void ofPlanet::update(int _planetCounter, int _kinectPosition, float _spectrum)
 {
     
